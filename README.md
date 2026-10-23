@@ -1,10 +1,10 @@
-# dimaggi cart ai AI
+# Dimaagi Cart AI
 
 **Your store's smart cart: spot drifting regulars, see why, and win them back.**
 
 *Dimaagi* is Urdu for smart, brainy. Until v0.3.2 the project was called WinBack AI; it was renamed because that name is already used by another company.
 
-dimaggi cart ai is an open-source churn intelligence project that combines **machine learning** with **marketing analytics**. It predicts which regular customers are about to pull back their spending, explains each prediction in plain English, and uses **RAG (retrieval-augmented generation)** to turn those explanations into cited, ready-to-send win-back campaigns. It will be packaged as a Windows desktop app.
+Dimaagi Cart AI is an open-source churn intelligence project that combines **machine learning** with **marketing analytics**. It predicts which regular customers are about to pull back their spending, explains each prediction in plain English, and uses **RAG (retrieval-augmented generation)** to turn those explanations into cited, ready-to-send win-back campaigns. It will be packaged as a Windows desktop app.
 
 > **Status:** Phase 1 (churn model and explanations) and Phase 2 (RAG: cited "why" summaries, campaign kits and an assistant chat) are complete. Phase 3 (desktop app) works end to end: a Windows installer (v0.3.2, unsigned) with bring-your-own-data. Publishing it on GitHub Releases is next. See the [Roadmap](#roadmap).
 
@@ -36,7 +36,7 @@ dimaggi cart ai is an open-source churn intelligence project that combines **mac
 
 Most businesses only notice a lost customer after they've stopped buying, and by then it's too late. In reality, customers rarely vanish overnight. They **drift**: they visit a little less often, skip their usual items, and quietly move their main shop elsewhere.
 
-dimaggi cart ai is built to catch that drift early and answer three questions a brand actually cares about:
+Dimaagi Cart AI is built to catch that drift early and answer three questions a brand actually cares about:
 
 1. **Who** is at risk of leaving? *(Phase 1: the churn model)*
 2. **Why** are they pulling back? *(Phase 1: SHAP explanations, plus Phase 2: RAG over real customer reviews)*
@@ -48,7 +48,7 @@ dimaggi cart ai is built to catch that drift early and answer three questions a 
 
 ### Phase 1
 
-| Metric (tested on a future time period) | dimaggi cart ai model | Recency rule* | Random |
+| Metric (tested on a future time period) | Dimaagi Cart AI model | Recency rule* | Random |
 |---|---|---|---|
 | ROC-AUC | **0.764** | 0.684 | 0.500 |
 | PR-AUC | **0.469** | n/a | 0.226 |
@@ -60,7 +60,7 @@ dimaggi cart ai is built to catch that drift early and answer three questions a 
 
 All numbers come from the reproducible script (`python -m src.train`, saved in `models/metrics.json`), tested on the newest period (Nov–Dec 2017, 2,297 regular customers). Earlier notebook figures are kept in [`reports/model_log.md`](reports/model_log.md).
 
-**In plain terms:** if a brand can only contact 1 in 5 customers, dimaggi cart ai reaches **44% of everyone about to churn**, which is **2.2× better than random** and **6 points better than the recency rule**. The model's edge over the recency rule appears at 20–30%; at 10% they tie. The model's edge comes from catching **silent churners**: customers who still shop, but whose baskets are shrinking.
+**In plain terms:** if a brand can only contact 1 in 5 customers, Dimaagi Cart AI reaches **44% of everyone about to churn**, which is **2.2× better than random** and **6 points better than the recency rule**. The model's edge over the recency rule appears at 20–30%; at 10% they tie. The model's edge comes from catching **silent churners**: customers who still shop, but whose baskets are shrinking.
 
 ### Phase 2
 
@@ -168,7 +168,7 @@ Grocery shoppers rarely disappear completely within two months, so "full churn" 
 | **Full churn:** no purchase in the next 2 months | 134 (5.8%) | Catches customers only after they've gone |
 | **Silent churn:** weekly spend drops 50%+ in the next 2 months (including stopping) | **509 (22.2%)** | Catches customers *while they can still be won back* |
 
-**dimaggi cart ai uses silent churn.** It applies to **regular customers** (5+ trips before the cutoff) and compares each customer's average weekly spend **before** a cutoff date with the **61 days after**.
+**Dimaagi Cart AI uses silent churn.** It applies to **regular customers** (5+ trips before the cutoff) and compares each customer's average weekly spend **before** a cutoff date with the **61 days after**.
 
 - **The rate is stable across the year:** 20.5% (Jul–Aug), 23.2% (Sep–Oct) and 22.7% (Nov–Dec), so the label reflects real behaviour, not a seasonal quirk.
 - **It's conservative:** December normally raises spending, so anyone flagged in the final window pulled back during the busiest season of the year.
@@ -208,7 +208,7 @@ Every experiment is recorded in [`reports/model_log.md`](reports/model_log.md). 
 | — | Reproduced with `src/train.py` | **0.764** | Script matches notebook within 0.003 |
 
 ### Validation approach
-Instead of a single random split, dimaggi cart ai builds **three rolling snapshots** of the customer base:
+Instead of a single random split, Dimaagi Cart AI builds **three rolling snapshots** of the customer base:
 
 | Snapshot | Features from data up to | Churn measured over |
 |---|---|---|
@@ -286,7 +286,7 @@ Phase 1 tells a store **who** is drifting. Phase 2 is built for one person: **th
 
 ### Hybrid retrieval
 
-Plain vector search returned **sandwich reviews for "bread"**: close in meaning, wrong for a grocery shelf. BM25 keyword search catches exact words like "loaf" or "dented", but misses paraphrases. The two fail in opposite places, so dimaggi cart ai fuses them with **reciprocal rank fusion (RRF)** and re-sorts the top results with a **local cross-encoder** ([`src/rag/hybrid.py`](src/rag/hybrid.py)).
+Plain vector search returned **sandwich reviews for "bread"**: close in meaning, wrong for a grocery shelf. BM25 keyword search catches exact words like "loaf" or "dented", but misses paraphrases. The two fail in opposite places, so Dimaagi Cart AI fuses them with **reciprocal rank fusion (RRF)** and re-sorts the top results with a **local cross-encoder** ([`src/rag/hybrid.py`](src/rag/hybrid.py)).
 
 - **So what:** the evidence behind each reason is about buying groceries, not about the deli counter.
 
@@ -381,7 +381,7 @@ An automated judge ([`eval/judge.py`](eval/judge.py)) splits each output into cl
 
 ## Phase 3: the desktop app
 
-dimaggi cart ai runs as a Windows app: a React front end in an Electron window, talking to a local FastAPI backend (`src/api/`) that wraps the Phase 1–2 code. Everything stays on the owner's computer; the backend only listens on `127.0.0.1` and every request carries a one-time token.
+Dimaagi Cart AI runs as a Windows app: a React front end in an Electron window, talking to a local FastAPI backend (`src/api/`) that wraps the Phase 1–2 code. Everything stays on the owner's computer; the backend only listens on `127.0.0.1` and every request carries a one-time token.
 
 ### What's ML, what's AI and what's RAG
 
@@ -416,7 +416,7 @@ Each store lives in its own folder under the data folder (`stores/<store-name>/`
 
 | Inside | What it is | Size installed |
 |---|---|---|
-| dimaggi cart ai app | Electron 45 shell and the built React front end, with fonts bundled | about 330 MB (mostly Chromium) |
+| Dimaagi Cart AI app | Electron 45 shell and the built React front end, with fonts bundled | about 330 MB (mostly Chromium) |
 | `resources/backend` | The Python backend frozen with PyInstaller (one folder): FastAPI, the ML stack, ChromaDB, local embeddings | about 510 MB |
 | Shipped data | The full and behaviour-only churn models with their feature lists and metrics; the demo store's segments, customer risk scores and SHAP drivers (dunnhumby-derived, anonymised household keys, no review text); and `config/` (store profile, Yelp category settings, the list of trend reports) | about 2.3 MB |
 
@@ -426,7 +426,7 @@ Each store lives in its own folder under the data folder (`stores/<store-name>/`
 
 **Public mode (the default).** On first run the app copies the shipped model, segments and config into `%APPDATA%\DimaagiCart` and keeps everything there: stores, imported data, knowledge bases and the embedding-model cache. The Gemini key goes into Windows Credential Manager. Uninstalling leaves `%APPDATA%\DimaagiCart` in place, so delete it by hand for a clean slate.
 
-**Choosing the data folder (personal mode).** Under **Retrain → Data folder → Choose folder…**, or **Open an existing dimaggi cart ai folder** on the welcome screen, point the app at another folder. Pointing it at this repo gives the installed app your existing knowledge bases, reasons, kits and scored customers. The app checks the folder first: an existing dimaggi cart ai (or WinBack AI) folder, an empty folder or a new one is fine; a folder of unrelated files, a file, or the app's own install folder is refused. It then restarts its engine on that folder without closing the window. Nothing is moved or deleted, and **Use the default** switches back. The choice is saved in `%APPDATA%\dimaggi cart ai\app-config.json`, next to the port the app reuses so the page keeps its saved checklist ticks between launches.
+**Choosing the data folder (personal mode).** Under **Retrain → Data folder → Choose folder…**, or **Open an existing Dimaagi Cart AI folder** on the welcome screen, point the app at another folder. Pointing it at this repo gives the installed app your existing knowledge bases, reasons, kits and scored customers. The app checks the folder first: an existing Dimaagi Cart AI (or WinBack AI) folder, an empty folder or a new one is fine; a folder of unrelated files, a file, or the app's own install folder is refused. It then restarts its engine on that folder without closing the window. Nothing is moved or deleted, and **Use the default** switches back. The choice is saved in `%APPDATA%\Dimaagi Cart AI\app-config.json`, next to the port the app reuses so the page keeps its saved checklist ticks between launches.
 
 Which folder wins: the `DIMAAGI_DATA_DIR` environment variable, then the folder chosen in the app, then the default (`%APPDATA%\DimaagiCart`). If the environment variable is set, the setting is shown but locked:
 ```powershell
@@ -435,7 +435,7 @@ setx DIMAAGI_DATA_DIR ""                                         # remove it aga
 ```
 **AI settings** show where the Gemini key comes from: saved in the app (Windows Credential Manager), the data folder's `.env`, or an environment variable. In personal mode the installed app also reads the `.env` in that folder (the same key and model names the CLI tools use); a key saved under **Retrain → AI settings** goes to Windows Credential Manager and takes priority. Public mode never reads a `.env`. The demo store stays read-only either way.
 
-**Upgrading from WinBack AI 0.3.x.** If you installed WinBack AI 0.3.x, uninstall it from Settings → Apps; your data is copied to the new folder automatically. On its first launch dimaggi cart ai copies (never moves) `%APPDATA%\WinBack` to `%APPDATA%\DimaagiCart` if the new folder doesn't exist yet, and says so once; the old folder is left untouched, so delete it yourself once you're happy. It also brings over the data folder you chose and the saved checklist ticks (from `%APPDATA%\WinBack AI`), and copies the Gemini key saved in Windows Credential Manager to the new *dimaggi cart ai* entry (the old entry stays). The old environment variables (`WINBACK_DATA_DIR` and the other `WINBACK_*` names) still work but are deprecated: rename them to `DIMAAGI_*`. If both are set, `DIMAAGI_*` wins.
+**Upgrading from WinBack AI 0.3.x.** If you installed WinBack AI 0.3.x, uninstall it from Settings → Apps; your data is copied to the new folder automatically. On its first launch Dimaagi Cart AI copies (never moves) `%APPDATA%\WinBack` to `%APPDATA%\DimaagiCart` if the new folder doesn't exist yet, and says so once; the old folder is left untouched, so delete it yourself once you're happy. It also brings over the data folder you chose and the saved checklist ticks (from `%APPDATA%\WinBack AI`), and copies the Gemini key saved in Windows Credential Manager to the new *Dimaagi Cart AI* entry (the old entry stays). The old environment variables (`WINBACK_DATA_DIR` and the other `WINBACK_*` names) still work but are deprecated: rename them to `DIMAAGI_*`. If both are set, `DIMAAGI_*` wins.
 
 **Windows SmartScreen.** The installer and the app are **not code-signed** (a signing certificate costs money and needs identity checks). The first time it runs, Windows shows "Windows protected your PC". Click **More info → Run anyway**. Some antivirus tools also scan unsigned PyInstaller apps more slowly the first time.
 
@@ -657,7 +657,7 @@ In a VS Code terminal, `ELECTRON_RUN_AS_NODE` is set, which makes `electron.exe`
 pip install -r requirements-build.txt
 .\packaging\build.ps1      # tests, front end, PyInstaller backend, verification, NSIS installer
 ```
-The script runs the offline Python tests, then builds the front end (with its Node tests) and the backend (`dimaagi-backend.spec`, about 5 minutes). It checks the backend with `packaging\verify_backend.py`: licensing scan, `--self-check` of the frozen ML/RAG stack, and a first run on an empty data folder. It then runs the desktop Node tests (data-folder rules and the WinBack AI migration) and builds the NSIS installer into `desktop\dist\`. To check an installed copy's engine on its own, run `"%LOCALAPPDATA%\Programs\dimaggi cart ai\resources\backend\dimaagi-backend.exe" --self-check`.
+The script runs the offline Python tests, then builds the front end (with its Node tests) and the backend (`dimaagi-backend.spec`, about 5 minutes). It checks the backend with `packaging\verify_backend.py`: licensing scan, `--self-check` of the frozen ML/RAG stack, and a first run on an empty data folder. It then runs the desktop Node tests (data-folder rules and the WinBack AI migration) and builds the NSIS installer into `desktop\dist\`. To check an installed copy's engine on its own, run `"%LOCALAPPDATA%\Programs\Dimaagi Cart AI\resources\backend\dimaagi-backend.exe" --self-check`.
 
 ---
 
@@ -691,9 +691,9 @@ The script runs the offline Python tests, then builds the front end (with its No
 
 ## Release notes
 
-### v0.3.2: WinBack AI is now dimaggi cart ai (2026-10-23)
+### v0.3.2: WinBack AI is now Dimaagi Cart AI (2026-10-23)
 
-- **New name.** WinBack AI is renamed **dimaggi cart ai** (*dimaagi* is Urdu for smart, brainy), because the old name is already used by another company. The chat screen is now **Ask Dimaagi**; the logo mark is unchanged. The repository moved to [github.com/maryamadeeba/dimaagi-cart-ai](https://github.com/maryamadeeba/dimaagi-cart-ai).
+- **New name.** WinBack AI is renamed **Dimaagi Cart AI** (*dimaagi* is Urdu for smart, brainy), because the old name is already used by another company. The chat screen is now **Ask Dimaagi**; the logo mark is unchanged. The repository moved to [github.com/maryamadeeba/dimaagi-cart-ai](https://github.com/maryamadeeba/dimaagi-cart-ai).
 - **Upgrading.** If you installed WinBack AI 0.3.x, uninstall it from Settings → Apps; your data is copied to the new folder automatically. The old `%APPDATA%\WinBack` folder is copied to `%APPDATA%\DimaagiCart` on first launch and left untouched; your chosen data folder, checklist ticks and saved Gemini key come across too.
 - **For developers.** Installer `DimaagiCart-Setup-0.3.2.exe`, backend `dimaagi-backend.exe`, app ID `com.maryamadeeba.dimaagicart`, header `X-Dimaagi-Token`. Environment variables are now `DIMAAGI_*`; the `WINBACK_*` names still work as deprecated aliases (`DIMAAGI_*` wins if both are set).
 - No changes to the model, the scores or the RAG pipeline.
