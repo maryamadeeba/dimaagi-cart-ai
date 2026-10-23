@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dimaagi Cart · Win them back</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF7EF}
+a{color:#2F6B4F}a:hover{color:#1F3B2D}
+.nav a{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 14px;border-radius:12px;color:#E9E2D2;text-decoration:none;font-weight:500;font-size:15px}
+.nav a:hover{background:rgba(251,247,239,0.10);color:#FBF7EF}
+.nav a.on{background:#FBF7EF;color:#1F3B2D;font-weight:700}
+.chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:600}
+.tab{min-height:44px;padding:0 18px;border-radius:999px;font:600 15px 'Figtree',sans-serif;cursor:pointer}
+.card{background:#FFFFFF;border:1px solid #E8E0D0;border-radius:22px;padding:24px}
+.lbl{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#5B6B60}
+.check{display:flex;gap:12px;align-items:flex-start;min-height:44px;font-size:15px;line-height:1.45;cursor:pointer}
+.check input{width:20px;height:20px;margin:1px 0 0;accent-color:#2F6B4F;flex-shrink:0}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; font-family: 'Figtree', system-ui, sans-serif; color: #1F3B2D; background: #FBF7EF">
+
+  <nav class="nav" aria-label="Main" style="flex: 1 1 248px; max-width: 280px; box-sizing: border-box; background: #1F3B2D; padding: 28px 18px; display: flex; flex-direction: column; gap: 6px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 22px">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#E0582B"></rect><path d="M10 19c0-5 4-9 9-9h3m0 0-3-3m3 3-3 3M24 15c0 5-4 9-9 9h-3m0 0 3 3m-3-3 3-3" fill="none" stroke="#FBF7EF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: #FBF7EF; letter-spacing: -0.02em">Dimaagi Cart</span>
+    </div>
+    <a href="Main.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"></rect><rect x="14" y="3" width="7" height="5" rx="2"></rect><rect x="14" y="12" width="7" height="9" rx="2"></rect><rect x="3" y="16" width="7" height="5" rx="2"></rect></svg>Dashboard</a>
+    <a href="Why.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Why they leave</a>
+    <a class="on" href="WinBack.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H5l-1 4z"></path><path d="M8 9h8M8 12h5"></path></svg>Win them back</a>
+    <a href="Ask.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.2 5.3L20 9l-4.4 3.8L17 18.5 12 15.6 7 18.5l1.4-5.7L4 9l5.8-.7z"></path></svg>Ask Dimaagi</a>
+    <a href="Retrain.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"></path></svg>Retrain</a>
+    <div style="margin-top: auto; padding: 16px 14px; border-radius: 14px; background: rgba(251,247,239,0.08); color: #E9E2D2; font-size: 13px; line-height: 1.5">
+      <div style="font-weight: 700; color: #FBF7EF">[STORE NAME]</div>
+      <div>Data through 1 Jan 2018</div>
+      <div>Model v0.2 · trained offline</div>
+    </div>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 40px clamp(20px, 4vw, 56px) 64px">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+
+      <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #B5441D">Win them back</span>
+          <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.08; letter-spacing: -0.03em">Your campaign kit, ready to send</h1>
+          <p style="margin: 0; font-size: 17px; color: #5B6B60; max-width: 640px">Fix first, then promise. Every message is checked before it reaches you.</p>
+        </div>
+        <button type="button" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #1F3B2D; background: transparent; color: #1F3B2D; font: 600 15px 'Figtree', sans-serif; cursor: pointer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Export kit
+        </button>
+      </header>
+
+      <div role="tablist" aria-label="Customer group" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+          <button class="tab" role="tab" aria-selected="{{t.selected}}" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button>
+        </sc-for>
+      </div>
+
+      <!-- Checks -->
+      <div aria-label="Automatic checks" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span class="chip" style="background: #E6F0E9; color: #2F6B4F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>Citations valid</span>
+        <span class="chip" style="background: #E6F0E9; color: #2F6B4F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>SMS {{k.smsLen}} / 160</span>
+        <span class="chip" style="background: #E6F0E9; color: #2F6B4F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>Subject {{k.subLen}} / 60</span>
+        <span class="chip" style="background: #E6F0E9; color: #2F6B4F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>Offer above median spend</span>
+        <span class="chip" style="background: #E6F0E9; color: #2F6B4F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>No unchecked promises</span>
+        <span class="chip" style="background: #F6E7B8; color: #1F3B2D">{{k.confirms}} [CONFIRM] lines to verify</span>
+      </div>
+
+      <!-- Offer + checklist -->
+      <section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+        <div style="flex: 999 1 460px; min-width: 0; background: #1F3B2D; color: #FBF7EF; border-radius: 26px; padding: 30px; display: flex; flex-direction: column; gap: 18px">
+          <span class="lbl" style="color: #F6E7B8">The offer · {{k.name}}</span>
+          <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.02em">{{k.headline}}</h2>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #E9E2D2">{{k.why}}</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px">
+            <div style="background: rgba(251,247,239,0.08); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; color: #E9E2D2">Discount</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">{{k.discount}}</span></div>
+            <div style="background: rgba(251,247,239,0.08); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; color: #E9E2D2">Minimum basket</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">{{k.minBasket}}</span></div>
+            <div style="background: rgba(251,247,239,0.08); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; color: #E9E2D2">Of the basket</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">{{k.pct}}</span></div>
+            <div style="background: rgba(251,247,239,0.08); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; color: #E9E2D2">Usual week</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">{{k.median}}</span></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start; background: #FBF7EF; color: #1F3B2D; border-radius: 16px; padding: 14px 16px; font-size: 15px; line-height: 1.5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0582B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px" aria-hidden="true"><path d="M20 12v8H4v-8M2 7h20v5H2zM12 20V7M12 7H8a2 2 0 1 1 2-3l2 3 2-3a2 2 0 1 1 2 3z"></path></svg>
+            <span><strong>Perk:</strong> {{k.perk}}</span>
+          </div>
+          <sc-if value="{{k.hasNote}}" hint-placeholder-val="{{false}}">
+            <div style="font-size: 14px; line-height: 1.5; color: #F6E7B8">{{k.note}}</div>
+          </sc-if>
+        </div>
+
+        <div class="card" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; justify-content: space-between; align-items: baseline">
+            <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 21px">Before you send</h2>
+            <span style="font-size: 13px; color: #5B6B60">{{k.checkCount}} steps</span>
+          </div>
+          <p style="margin: 0 0 4px; font-size: 14px; color: #5B6B60">Do these first, so every [CONFIRM] line is true.</p>
+          <sc-for list="{{k.checklist}}" as="c" hint-placeholder-count="4">
+            <label class="check"><input type="checkbox"><span>{{c}}</span></label>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- Messages -->
+      <section style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+        <article class="card" aria-label="Email" style="flex: 999 1 460px; min-width: 0; padding: 0; overflow: hidden">
+          <div style="padding: 18px 24px; border-bottom: 1px solid #F1EADB; display: flex; flex-direction: column; gap: 6px">
+            <span class="lbl">Email · day 1</span>
+            <div style="font-size: 14px; color: #5B6B60">From: [STORE NAME]</div>
+            <div style="font-size: 19px; font-weight: 700">{{k.subject}}</div>
+            <div style="font-size: 14px; color: #5B6B60">{{k.preview}}</div>
+          </div>
+          <div style="padding: 22px 24px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; line-height: 1.6">
+            <sc-for list="{{k.body}}" as="p" hint-placeholder-count="3">
+              <p style="margin: 0"><sc-for list="{{p}}" as="part" hint-placeholder-count="2"><span style="{{part.style}}">{{part.t}}</span></sc-for></p>
+            </sc-for>
+            <div style="padding-top: 6px"><span style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: #E0582B; color: #FFFFFF; font-weight: 600">{{k.cta}}</span></div>
+            <div style="font-size: 15px">Warmly,<br>[STORE NAME]</div>
+          </div>
+        </article>
+
+        <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+          <article class="card" aria-label="SMS" style="display: flex; flex-direction: column; gap: 12px">
+            <div style="display: flex; justify-content: space-between; align-items: baseline"><span class="lbl">SMS · day 4</span><span style="font-size: 13px; color: #5B6B60">opted-in only</span></div>
+            <div style="background: #F1EADB; border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+              <span style="font-size: 12px; color: #5B6B60; text-align: center">Text message</span>
+              <div style="align-self: flex-start; max-width: 92%; background: #FFFFFF; border-radius: 18px 18px 18px 6px; padding: 12px 14px; font-size: 15px; line-height: 1.45">{{k.sms}}</div>
+            </div>
+          </article>
+
+          <article class="card" aria-label="Social post" style="display: flex; flex-direction: column; gap: 12px">
+            <div style="display: flex; justify-content: space-between; align-items: baseline"><span class="lbl">Social post</span><span style="font-size: 13px; color: #5B6B60">{{k.platform}}</span></div>
+            <div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E6F0E9; border: 1.5px dashed #9DBBA8; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #2F6B4F; text-align: center; padding: 16px">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><circle cx="9" cy="11" r="2"></circle><path d="m21 16-5-5-8 8"></path></svg>
+              <span style="font-size: 14px; font-weight: 600">Your photo: {{k.photo}}</span>
+            </div>
+            <div style="font-weight: 700; font-size: 15px">{{k.hook}}</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3E5045"><sc-for list="{{k.caption}}" as="part" hint-placeholder-count="2"><span style="{{part.style}}">{{part.t}}</span></sc-for></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Send plan -->
+      <section class="card" aria-labelledby="plan-h" style="display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px">
+          <h2 id="plan-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px">Two-week send plan</h2>
+          <span style="font-size: 14px; color: #5B6B60">Short and deliberate, ending with a friendly goodbye</span>
+        </div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+          <sc-for list="{{k.plan}}" as="s" hint-placeholder-count="4">
+            <li style="background: #FBF7EF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+              <div style="display: flex; justify-content: space-between; align-items: center">
+                <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">{{s.day}}</span>
+                <span class="chip" style="height: 26px; background: #FFFFFF; color: #1F3B2D; border: 1px solid #E8E0D0">{{s.ch}}</span>
+              </div>
+              <span style="font-size: 15px; line-height: 1.5">{{s.action}}</span>
+            </li>
+          </sc-for>
+        </ol>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid #F1EADB; font-size: 13px; color: #5B6B60">
+          <span>Built from: {{k.sources}}</span>
+          <span>Measure: redemptions, category spend rebound, revenue recovered</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { picked: 'hv' }; }
+  renderVals() {
+    const plain = 'color: inherit';
+    const conf = 'background: #F6E7B8; border-radius: 4px; padding: 1px 3px';
+    const T = (t) => ({ t, style: plain });
+    const C = (t) => ({ t: t + ' [CONFIRM]', style: conf });
+    const step = (day, ch, action) => ({ day, ch, action });
+    const data = {
+      hv: { label: 'High-value · 34', name: 'High-value',
+        headline: 'A personal staple-hold service, plus $10 off a $75 basket',
+        why: 'Leads with recognition and service, not a deep discount. The $75 threshold sits just above this group’s usual $70.93 week, so it grows the basket.',
+        discount: '$10', minBasket: '$75', pct: '13%', median: '$70.93',
+        perk: 'We’ll hold their milk, bread and soup behind the counter, ready when they arrive.',
+        hasNote: false, note: '',
+        checklist: ['Check milk code dates every morning and pull anything close to expiry', 'Audit soup and packaged bread shelves before opening', 'Set up a hold shelf behind the checkout counter', 'Brief cashiers on the hold service and the $10 off $75 code', 'Text only customers who opted in to SMS'],
+        subject: 'A special thank you for our most valued shopper', subLen: 47,
+        preview: 'We’ve missed seeing you, so we saved something special for your next visit.',
+        body: [
+          [T('As one of our most valued shoppers, your visits mean the world to our independent market. We’ve missed you lately.')],
+          [C('We now check our dairy cases every morning so you always find milk with long dates.'), T(' '), C('Our soup aisle and packaged bread shelves are fully restocked.')],
+          [T('To welcome you back, we’d love to hold your essentials behind the counter so they’re ready when you arrive. Plus, enjoy $10 off your next basket of $75 or more.')]
+        ],
+        cta: 'Reserve your staples', confirms: 2,
+        sms: 'We miss you at [STORE NAME]! Enjoy $10 off your $75 purchase. Show this text at the register to redeem. Reply STOP to opt out.', smsLen: 134,
+        platform: 'Instagram', photo: 'morning restock of the dairy case',
+        hook: 'Ever wonder what goes into keeping your daily essentials fresh and stocked?',
+        caption: [C('Our team runs morning freshness checks across the dairy cases.'), T(' Stop by [STORE NAME] this week for your kitchen essentials.')],
+        plan: [step('Day 1', 'Email', 'Welcome back, the hold service and $10 off $75'), step('Day 4', 'SMS', 'Reminder to opted-in shoppers who haven’t returned'), step('Day 8', 'Email', 'Follow-up on fresh stock and the hold shelf'), step('Day 14', 'Email', 'Friendly goodbye: update preferences or opt out')],
+        sources: '4 reviews from other stores · Bond Loyalty Report 2025, p.8 · MailGenius win-back playbook, p.8 · Klaviyo SMS benchmarks, p.4' },
+      cb: { label: 'Core · Basket changed · 272', name: 'Core · Basket changed',
+        headline: '$3 off your next $20 basket',
+        why: 'A modest, simple saving that nudges a small weekly basket back up to a full staples shop.',
+        discount: '$3', minBasket: '$20', pct: '15%', median: '$9.65',
+        perk: 'None: a simple discount for regulars keeps it easy.',
+        hasNote: true, note: 'Your call: $20 is about 2× this group’s usual basket. Lowering it to about $15 may bring more people back.',
+        checklist: ['Check packaged bread and rolls morning and afternoon so there are no gaps', 'Inspect milk and cheese dates every morning and rotate stock', 'Brief cashiers on applying $3 off baskets of $20 or more'],
+        subject: 'A special neighbor offer from [STORE NAME]', subLen: 42,
+        preview: 'Enjoy $3 off your next $20 basket as our shelves are refreshed.',
+        body: [
+          [T('Hello neighbor, we’ve missed seeing you around [STORE NAME].')],
+          [C('Our shelves are fully stocked with your daily essentials, from packaged breads and rolls to fresh milk and cheese.'), T(' '), C('Our team inspects dairy dates every morning.')],
+          [T('As a thank you for being one of our regulars, enjoy $3 off your next visit when you spend $20 or more. Just mention this note at checkout.')]
+        ],
+        cta: 'Visit us this week', confirms: 2,
+        sms: '[STORE NAME]: Take $3 off your next purchase of $20+! Show this text at the register to redeem. Reply STOP to opt out', smsLen: 125,
+        platform: 'Facebook', photo: 'a fully stocked bread shelf',
+        hook: 'Stocking up on your weekly staples should never be a guessing game.',
+        caption: [C('Our packaged bread shelves are restocked with sandwich loaves, buns and dinner rolls.'), T(' '), C('We inspect the dairy cases daily.'), T(' Stop by this week!')],
+        plan: [step('Day 1', 'Email', 'Welcome back and $3 off $20'), step('Day 4', 'SMS', 'Short reminder with how to redeem'), step('Day 8', 'Email', 'Follow-up on dairy freshness'), step('Day 14', 'Email', 'Friendly goodbye: update preferences or opt out')],
+        sources: '7 reviews from other stores · MailGenius win-back playbook, pp.1, 3, 8 · Klaviyo SMS benchmarks, p.4 · Sprout Social Index, p.3' },
+      cv: { label: 'Core · Visiting less · 163', name: 'Core · Visiting less',
+        headline: '$3 off your next $20 basket of fresh staples',
+        why: 'Answers price complaints with a modest saving, and $20 grows this group’s usual $12.80 basket.',
+        discount: '$3', minBasket: '$20', pct: '15%', median: '$12.80',
+        perk: 'None: the saving plus faster checkout does the work.',
+        hasNote: false, note: '',
+        checklist: ['Check milk and packaged bread stock at 7 AM and refill gaps', 'Inspect dairy and cheese dates every morning', 'Add a backup cashier at rush hour, 4 to 7 PM', 'Brief register staff on the $3 off $20 code', 'Check SMS consent records before texting'],
+        subject: 'A special neighbor offer on fresh staples at [STORE NAME]', subLen: 57,
+        preview: 'Enjoy $3 off your next $20 basket on fresh dairy and bread staples.',
+        body: [
+          [T('Hello neighbor, we’ve missed seeing you around the aisles at [STORE NAME].')],
+          [C('Our team now checks the dairy cases and bread shelves every morning so they stay stocked.'), T(' '), C('We’ve also added cashier support at peak hours.')],
+          [T('To help with the grocery budget, enjoy $3 off your next purchase of $20 or more. Just show this note at the counter.')]
+        ],
+        cta: 'Show at checkout', confirms: 2,
+        sms: '[STORE NAME]: Take $3 off your next $20+ grocery basket. Show this text at the register to save. Reply STOP to opt out.', smsLen: 127,
+        platform: 'Instagram', photo: 'a short checkout line at rush hour',
+        hook: 'Your staple groceries deserve reliable freshness and speed every single trip.',
+        caption: [C('Our team audits dates every morning.'), T(' '), C('We’re staffing up the registers at rush hour.'), T(' Drop by [STORE NAME] today!')],
+        plan: [step('Day 1', 'Email', '$3 off $20, stocked shelves, faster checkout'), step('Day 4', 'SMS', 'Reminder to opted-in regulars'), step('Day 9', 'Email', 'Follow-up on dairy freshness'), step('Day 14', 'Email', 'Friendly goodbye: update preferences or opt out')],
+        sources: '10 reviews from other stores · McKinsey grocery report, p.22 · MailGenius win-back playbook, p.8 · Klaviyo SMS benchmarks, p.4' }
+    };
+    const picked = this.state.picked;
+    const k = data[picked];
+    k.checkCount = k.checklist.length;
+    const tabs = ['hv', 'cb', 'cv'].map((id) => ({
+      label: data[id].label, selected: id === picked ? 'true' : 'false',
+      style: id === picked ? 'background: #1F3B2D; color: #FBF7EF; border: 1.5px solid #1F3B2D' : 'background: #FFFFFF; color: #1F3B2D; border: 1.5px solid #E8E0D0',
+      pick: () => this.setState({ picked: id })
+    }));
+    return { tabs, k };
+  }
+}
+</script>
+</body>
+</html>

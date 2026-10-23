@@ -1,0 +1,79 @@
+{
+  "name": "dimaagi-cart",
+  "productName": "Dimaagi Cart",
+  "version": "0.3.2",
+  "description": "Your store's smart cart: spot drifting regulars, see why, and win them back.",
+  "author": "Maryam Adeeba",
+  "license": "MIT",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "concurrently -k -n vite,app -c green,yellow \"npm --prefix ../frontend run dev\" \"wait-on http://localhost:5173 && node scripts/run-electron.js --dimaagi-dev\"",
+    "start": "npm --prefix ../frontend run build && node scripts/run-electron.js",
+    "test": "node --test test/datafolder.test.js",
+    "icons": "..\\.venv\\Scripts\\python scripts/make_icons.py",
+    "dist": "npm --prefix ../frontend run build && electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.15.3",
+    "wait-on": "^9.5.1"
+  },
+  "allowScripts": {
+    "electron": true,
+    "electron-winstaller": false
+  },
+  "build": {
+    "appId": "com.maryamadeeba.dimaagicart",
+    "productName": "Dimaagi Cart",
+    "copyright": "Copyright © 2026 Maryam Adeeba",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "datafolder.js",
+      "preload.js",
+      "splash.html",
+      "assets/**",
+      "build/icon.png"
+    ],
+    "extraResources": [
+      {
+        "from": "../dist/dimaagi-backend",
+        "to": "backend"
+      },
+      {
+        "from": "../frontend/dist",
+        "to": "frontend"
+      }
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Dimaagi Cart",
+      "uninstallDisplayName": "Dimaagi Cart",
+      "artifactName": "DimaagiCart-Setup-${version}.exe",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; font-src file:">
+<title>Starting Dimaagi Cart</title>
+<style>
+  @font-face { font-family: 'Bricolage Grotesque'; font-weight: 800; src: url('assets/fonts/bricolage-grotesque-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Figtree'; font-weight: 500; src: url('assets/fonts/figtree-latin-500-normal.woff2') format('woff2'); }
+  html, body { margin: 0; height: 100%; background: #1F3B2D; color: #FBF7EF; font-family: 'Figtree', 'Segoe UI', system-ui, sans-serif; font-weight: 500; -webkit-user-select: none; user-select: none; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; -webkit-app-region: drag; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+  .note { font-size: 14px; color: #E9E2D2; }
+  .bar { width: 220px; height: 8px; border-radius: 999px; background: rgba(251, 247, 239, 0.15); overflow: hidden; }
+  .bar div { width: 40%; height: 100%; border-radius: 999px; background: #E0582B; animation: slide 1.2s ease-in-out infinite; }
+  @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+  @media (prefers-reduced-motion: reduce) { .bar div { animation: none; width: 100%; background: #F6E7B8; } }
+</style>
+</head>
+<body>
+  <div class="brand">
+    <svg width="44" height="44" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#E0582B"/><path d="M10 19c0-5 4-9 9-9h3m0 0-3-3m3 3-3 3M24 15c0 5-4 9-9 9h-3m0 0 3 3m-3-3 3-3" fill="none" stroke="#FBF7EF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Dimaagi Cart
+  </div>
+  <div class="bar" role="progressbar" aria-label="Starting"><div></div></div>
+  <div class="note" role="status">Starting the engine on this computer…</div>
+</body>
+</html>
