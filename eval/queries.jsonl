@@ -1,0 +1,45 @@
+{"qid": "c01", "type": "category", "query": "expired milk"}
+{"qid": "c02", "type": "category", "query": "moldy cheese"}
+{"qid": "c03", "type": "category", "query": "stale bread from the bakery"}
+{"qid": "c04", "type": "category", "query": "canned soup"}
+{"qid": "c05", "type": "category", "query": "poor quality meat at the butcher counter"}
+{"qid": "c06", "type": "category", "query": "rotten fruits and vegetables"}
+{"qid": "c07", "type": "category", "query": "cracked or expired eggs"}
+{"qid": "c08", "type": "category", "query": "freezer burned frozen food"}
+{"qid": "c09", "type": "category", "query": "rotisserie chicken"}
+{"qid": "c10", "type": "category", "query": "deli meat slicing"}
+{"qid": "c11", "type": "category", "query": "fish and seafood that smells bad"}
+{"qid": "c12", "type": "category", "query": "bakery cakes"}
+{"qid": "c13", "type": "category", "query": "soda and drink prices"}
+{"qid": "c14", "type": "category", "query": "chips and snacks"}
+{"qid": "c15", "type": "category", "query": "organic produce selection"}
+{"qid": "i01", "type": "issue", "query": "prices are too high"}
+{"qid": "i02", "type": "issue", "query": "prices went up recently"}
+{"qid": "i03", "type": "issue", "query": "item rang up at the wrong price at the register"}
+{"qid": "i04", "type": "issue", "query": "out of stock and empty shelves"}
+{"qid": "i05", "type": "issue", "query": "long checkout lines"}
+{"qid": "i06", "type": "issue", "query": "rude cashier"}
+{"qid": "i07", "type": "issue", "query": "no staff around to help find things"}
+{"qid": "i08", "type": "issue", "query": "dirty store and floors"}
+{"qid": "i09", "type": "issue", "query": "bad smell in the store"}
+{"qid": "i10", "type": "issue", "query": "parking lot problems"}
+{"qid": "i11", "type": "issue", "query": "refused my return or refund"}
+{"qid": "i12", "type": "issue", "query": "coupons not honored"}
+{"qid": "i13", "type": "issue", "query": "self checkout problems"}
+{"qid": "i14", "type": "issue", "query": "confusing layout, hard to find items"}
+{"qid": "i15", "type": "issue", "query": "limited selection compared to other stores"}
+{"qid": "t01", "type": "theme", "query": "stopped shopping here and switched to another store"}
+{"qid": "t02", "type": "theme", "query": "used to be my favorite store but it got worse"}
+{"qid": "t03", "type": "theme", "query": "only shop here because it is close to home"}
+{"qid": "t04", "type": "theme", "query": "drive to a farther store for better quality"}
+{"qid": "t05", "type": "theme", "query": "new management changed the store"}
+{"qid": "t06", "type": "theme", "query": "online pickup order missing items"}
+{"qid": "t07", "type": "theme", "query": "delivery order with bad substitutions"}
+{"qid": "t08", "type": "theme", "query": "loyalty card and rewards program"}
+{"qid": "h01", "type": "hard", "query": "packaged sliced bread from the bread aisle", "note": "Packaged grocery bread or loaves bought to take home. Sandwiches and restaurant bread are NOT relevant."}
+{"qid": "h02", "type": "hard", "query": "canned soup from the soup aisle", "note": "Canned or packaged soup bought as groceries. Deli or restaurant soup is NOT relevant."}
+{"qid": "h03", "type": "hard", "query": "buying a gallon of milk", "note": "Buying milk as a grocery item (price, freshness, availability). Coffee drinks are NOT relevant."}
+{"qid": "h04", "type": "hard", "query": "cheese from the dairy case", "note": "Packaged cheese bought as groceries. Cheese on prepared food is NOT relevant."}
+{"qid": "h05", "type": "hard", "query": "fresh bread baked in store", "note": "Loaves or rolls baked in the store's bakery and bought to take home. Sandwiches are NOT relevant."}
+{"qid": "h06", "type": "hard", "query": "breakfast cereal", "note": "Cereal bought as groceries (price, stock, selection)."}
+{"qid": "h07", "type": "hard", "query": "baby formula out of stock", "note": "Baby formula availability or price at a grocery store."}

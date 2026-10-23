@@ -1,0 +1,12 @@
+{"qid": "q01", "type": "overview", "question": "Which customers am I losing and how much money is at risk?", "expected_tools": ["list_segments"]}
+{"qid": "q02", "type": "overview", "question": "Which group of customers should I focus on first?", "expected_tools": ["list_segments"]}
+{"qid": "q03", "type": "why", "question": "Why are my high-value customers leaving?", "expected_tools": ["get_segment_reasons"]}
+{"qid": "q04", "type": "why", "question": "What's driving the core customers who are visiting less?", "expected_tools": ["get_segment_reasons"]}
+{"qid": "q05", "type": "reviews", "question": "What do shoppers complain about when it comes to milk?", "expected_tools": ["search_reviews"]}
+{"qid": "q06", "type": "reviews", "question": "Are long checkout lines a common complaint at grocery stores?", "expected_tools": ["search_reviews"]}
+{"qid": "q07", "type": "trends", "question": "What are the best practices for SMS marketing?", "expected_tools": ["search_marketing_trends"]}
+{"qid": "q08", "type": "trends", "question": "How often should I send win-back emails?", "expected_tools": ["search_marketing_trends"]}
+{"qid": "q09", "type": "campaign", "question": "What should I send to my core customers who are visiting less?", "expected_tools": ["get_campaign_kit"]}
+{"qid": "q10", "type": "campaign", "question": "What do I need to fix before sending the high-value campaign?", "expected_tools": ["get_campaign_kit"]}
+{"qid": "q11", "type": "multi", "question": "Why are my core basket-changed customers buying less bread, and what marketing tactic would help?", "expected_tools": ["get_segment_reasons", "search_marketing_trends"]}
+{"qid": "q12", "type": "out_of_scope", "question": "What's the weather in Lahore tomorrow?", "expected_tools": []}

@@ -1,0 +1,29 @@
+niche: grocery
+yelp_category: Grocery          # exact Yelp category name to keep
+
+sample:                         # how many reviews to keep per star group
+  negative: 12000               # 1–2 stars: where the "why they leave" lives
+  neutral: 5000                 # 3 stars: mixed feelings
+  positive: 8000                # 4–5 stars: what keeps customers loyal
+min_words: 25                   # skip very short reviews
+
+product_tags:                   # links reviews to your lapsed categories
+  milk_dairy:   [milk, dairy, yogurt, butter, cream, eggs]
+  bread_bakery: [bread, bakery, bagel, bagels, buns, rolls, baguette, pastry, pastries]
+  cheese:       [cheese, cheeses]
+  produce:      [produce, vegetable, vegetables, fruit, fruits, lettuce, tomatoes, avocados, berries, bananas, apples]
+  meat_seafood: [meat, beef, chicken, pork, seafood, fish, butcher, steak]
+  frozen:       [frozen, pizza, ice cream]
+  drinks:       [coffee, soda, drinks, beverages, juice, soft drinks]
+  pantry:       [soup, canned, cereal, pasta, rice, snacks, crackers, chips]
+
+issue_tags:                     # the "why"
+  price_value:        [price, prices, expensive, overpriced, pricey, cheaper, deals, sale, sales, coupon, coupons, value]
+  freshness_quality:  [fresh, freshness, stale, rotten, moldy, mold, spoiled, expired, expiration, quality, wilted, bruised]
+  staff_service:      [staff, rude, employee, employees, cashier, cashiers, manager, service, friendly, helpful, unhelpful]
+  checkout_wait:      [line, lines, checkout, wait, waited, waiting, register, registers, self-checkout]
+  stock_availability: [out of stock, empty shelves, sold out, restock, couldn't find, could not find, never have]
+  cleanliness:        [dirty, filthy, smell, smells, smelly, messy, cleanliness, sticky]
+  selection_variety:  [selection, variety, options, organic, limited]
+  convenience:        [parking, location, hours, crowded, convenient]
+  delivery_online:    [delivery, online, instacart, pickup, curbside]

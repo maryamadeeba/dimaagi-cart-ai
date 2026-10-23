@@ -1,0 +1,18 @@
+# What is TRUE about the store. The campaign generator may only state these facts.
+# The owner edits this file (in the Phase 3 app: a settings screen).
+store_name: "[STORE NAME]"        # replace with the real name to get exact SMS lengths
+departments:
+  dairy: true
+  packaged_bread: true
+  in_store_bakery: false          # bread comes from suppliers; no baking on site
+  deli: true
+  soup_aisle: true
+services:
+  loyalty_program: false
+  online_ordering: false
+  delivery: false
+  sms_list: true                  # customers who opted in to texts
+suppliers:
+  local_dairy: unknown            # "unknown" means: don't claim it
+  local_bakers: unknown
+notes: "Small independent grocery with thin margins: keep discounts modest."
